@@ -19,4 +19,11 @@ $(USER_VIRTUAL_ENVIRONMENT): requirements.txt
 	. $(USER_VIRTUAL_ENVIRONMENT)/bin/activate && $(PIP) install -r requirements.txt
 	touch $(USER_VIRTUAL_ENVIRONMENT)
 
+dev: | $(USER_VIRTUAL_ENVIRONMENT)
+	if test -z "$${VIRTUAL_ENV}"; then \
+		. $(USER_VIRTUAL_ENVIRONMENT)/bin/activate && flask --app src run; \
+	else \
+		flask --app src run; \
+	fi
+
 .PHONY: install activate
