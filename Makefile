@@ -20,6 +20,6 @@ $(USER_VIRTUAL_ENVIRONMENT): requirements.txt
 	touch $(USER_VIRTUAL_ENVIRONMENT)
 
 dev: | $(USER_VIRTUAL_ENVIRONMENT)
-	$(USER_VIRTUAL_ENVIRONMENT)/bin/flask --debug --app src run
+	$(USER_VIRTUAL_ENVIRONMENT)/bin/flask --debug --app src.app run
 
 .PHONY: install activate dev
