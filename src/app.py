@@ -51,6 +51,11 @@ def hist():
 
     style = """
         <style>
+            html {
+                color: navy;
+                background-color: aliceblue;
+            }
+
             main {
                 display: flex;
                 align-items: center;
