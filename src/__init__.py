@@ -26,7 +26,7 @@ def main():
         do Mercado Livre.</p>
     """
 
-@app.route("/hist")
+@app.route("/hist/")
 def hist():
     products = []
 
