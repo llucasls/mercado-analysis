@@ -3,7 +3,7 @@ import base64
 from io import BytesIO
 
 from requests import request
-from flask import Flask
+from flask import Flask, request as req
 import pandas as pd
 from matplotlib.figure import Figure
 
@@ -11,7 +11,6 @@ from matplotlib.figure import Figure
 app = Flask("mercado_analysis")
 
 BASE_URL = "https://api.mercadolibre.com/sites/MLB"
-product_url = f"{BASE_URL}/search?q=memoria+ram+ddr4+8gb"
 
 
 @app.route("/")
@@ -31,6 +30,11 @@ def main():
 
 @app.route("/hist/")
 def hist():
+    query = req.args.get("q")
+    if not query:
+        return "Parâmetro de busca não fornecido", 400
+
+    product_url = f"{BASE_URL}/search?q={query}"
     products = []
 
     product_response = request("get", product_url)
