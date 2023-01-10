@@ -16,12 +16,7 @@ BASE_URL = "https://api.mercadolibre.com/sites/MLB"
 @app.route("/")
 def main():
     return """
-        <style>
-        html {
-            color: navy;
-            background-color: aliceblue;
-        }
-        </style>
+        <link rel="stylesheet" href="/static/style.css" />
         <h1>Mercado Analysis</h1>
         <p>Esta aplicação serve para fazer uma análise estatística de produtos
         do Mercado Livre.</p>
@@ -53,27 +48,9 @@ def hist():
     fig.savefig(buf, format="png")
     data = base64.b64encode(buf.getbuffer()).decode("ascii")
 
-    style = """
-        <style>
-            html {
-                color: navy;
-                background-color: aliceblue;
-            }
-
-            main {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-            }
-        </style>
-    """
-
-    content = f"""
+    return """
+        <link rel="stylesheet" href="/static/style.css" />
         <main>
             <img src='data:image/png;base64,{data}' />
         </main>
     """
-
-    return f"""{style}
-               {content}"""
