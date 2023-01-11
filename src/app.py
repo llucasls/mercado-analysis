@@ -54,7 +54,7 @@ def hist():
     fig.savefig(buf, format="png")
     data = base64.b64encode(buf.getbuffer()).decode("ascii")
 
-    return """
+    return f"""
         <link rel="stylesheet" href="/static/style.css" />
         <main>
             <img src='data:image/png;base64,{data}' />
