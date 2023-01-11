@@ -2,12 +2,17 @@ import json
 from requests import request
 
 
+def parse_query(user_query: str) -> str:
+    return user_query.replace(" ", "+")
+
+
 BASE_URL = "https://api.mercadolibre.com/sites/MLB"
-product_url = f"{BASE_URL}/search?q=computador"
+query = input("Por favor, digite o produto da busca: ")
+query = parse_query(query)
 
+
+product_url = f"{BASE_URL}/search?q={query}"
 product_response = request("get", product_url)
-product_list = json.loads(product_response.text)
 
 
-with open("products.json", mode="w") as file:
-    file.write(product_response.text)
+print(product_response.text)
