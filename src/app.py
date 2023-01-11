@@ -2,7 +2,7 @@ import json
 import base64
 from io import BytesIO
 
-from requests import request
+from requests import request, RequestException, HTTPError
 from flask import Flask, request as req
 import pandas as pd
 from matplotlib.figure import Figure
@@ -29,7 +29,13 @@ def hist():
     if not query:
         return "Parâmetro de busca não fornecido", 400
 
-    product_url = f"{BASE_URL}/search?q={query}"
+    try:
+        product_url = f"{BASE_URL}/search?q={query}"
+    except HTTPError:
+        return "HTTPError", 500
+    except RequestException:
+        return "RequestError", 500
+
     products = []
 
     product_response = request("get", product_url)
