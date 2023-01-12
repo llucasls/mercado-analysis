@@ -23,7 +23,7 @@ def main():
 
         <form>
             <input type="text" />
-            <button type="button">buscar</button>
+            <button id="search-button" type="button">buscar</button>
         </form>
         <script src="/static/scripts/search_product.js"></script>
     """

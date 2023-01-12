@@ -7,5 +7,5 @@ function searchProduct(event) {
   window.location = `${URL}/hist?q=${query}`;
 }
 
-const button = document.getElementsByTagName("button")[0];
+const button = document.getElementById("search-button");
 button.onclick = searchProduct;
