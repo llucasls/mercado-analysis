@@ -20,8 +20,13 @@ def main():
         <h1>Mercado Analysis</h1>
         <p>Esta aplicação serve para fazer uma análise estatística de produtos
         do Mercado Livre.</p>
-    """
 
+        <form>
+            <input type="text" />
+            <button type="button">buscar</button>
+        </form>
+        <script src="/static/scripts/search_product.js"></script>
+    """
 
 @app.route("/hist/")
 def hist():
