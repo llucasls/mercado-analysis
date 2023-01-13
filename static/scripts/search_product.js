@@ -4,7 +4,7 @@ function searchProduct(event) {
   const { target } = event;
   const query = target.previousElementSibling.value;
 
-  window.location = `${URL}/hist?q=${query}`;
+  window.location = `${URL}/graphics?q=${query}`;
 }
 
 const button = document.getElementById("search-button");

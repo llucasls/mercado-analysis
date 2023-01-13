@@ -28,8 +28,8 @@ def main():
         <script src="/static/scripts/search_product.js"></script>
     """
 
-@app.route("/hist/")
-def hist():
+@app.route("/graphics/")
+def graphics():
     query = req.args.get("q")
     if not query:
         return "Parâmetro de busca não fornecido", 400
