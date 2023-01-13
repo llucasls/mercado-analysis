@@ -28,6 +28,7 @@ def main():
         <script src="/static/scripts/search_product.js"></script>
     """
 
+
 @app.route("/graphics/")
 def graphics():
     query = req.args.get("q")
@@ -65,7 +66,6 @@ def graphics():
     buf = BytesIO()
     boxplot.savefig(buf, format="png")
     boxplot_data = base64.b64encode(buf.getbuffer()).decode("ascii")
-
 
     return f"""
         <link rel="stylesheet" href="/static/style.css" />
