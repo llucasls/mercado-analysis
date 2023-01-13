@@ -52,11 +52,11 @@ def hist():
     product_data = pd.DataFrame(products)
     prices = product_data["price"]
 
-    fig = Figure()
-    ax = fig.subplots()
+    histogram = Figure()
+    ax = histogram.subplots()
     ax.hist(prices)
     buf = BytesIO()
-    fig.savefig(buf, format="png")
+    histogram.savefig(buf, format="png")
     data = base64.b64encode(buf.getbuffer()).decode("ascii")
 
     return f"""
