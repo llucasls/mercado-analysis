@@ -57,11 +57,20 @@ def hist():
     ax.hist(prices)
     buf = BytesIO()
     histogram.savefig(buf, format="png")
-    data = base64.b64encode(buf.getbuffer()).decode("ascii")
+    hist_data = base64.b64encode(buf.getbuffer()).decode("ascii")
+
+    boxplot = Figure()
+    ax = boxplot.subplots()
+    ax.boxplot(prices)
+    buf = BytesIO()
+    boxplot.savefig(buf, format="png")
+    boxplot_data = base64.b64encode(buf.getbuffer()).decode("ascii")
+
 
     return f"""
         <link rel="stylesheet" href="/static/style.css" />
         <main>
-            <img src='data:image/png;base64,{data}' />
+            <img src='data:image/png;base64,{hist_data}' />
+            <img src='data:image/png;base64,{boxplot_data}' />
         </main>
     """
