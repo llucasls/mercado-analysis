@@ -13,6 +13,13 @@ app = Flask("mercado_analysis")
 BASE_URL = "https://api.mercadolibre.com/sites/MLB"
 
 
+def get_search_term(query_string: str) -> str:
+    query_string = query_string.replace("+", " ")
+    query_string = query_string.replace("%20", " ")
+
+    return query_string
+
+
 @app.route("/")
 def main():
     return """
