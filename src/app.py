@@ -42,6 +42,8 @@ def graphics():
     if not query:
         return "Parâmetro de busca não fornecido", 400
 
+    product_name = get_search_term(query)
+
     try:
         product_url = f"{BASE_URL}/search?q={query}"
     except HTTPError:
@@ -77,6 +79,7 @@ def graphics():
     return f"""
         <link rel="stylesheet" href="/static/style.css" />
         <main>
+            <h1 align="center">{product_name}</h1>
             <img src='data:image/png;base64,{hist_data}' />
             <img src='data:image/png;base64,{boxplot_data}' />
         </main>
