@@ -24,14 +24,18 @@ def get_search_term(query_string: str) -> str:
 def main():
     return """
         <link rel="stylesheet" href="/static/style.css" />
-        <h1>Mercado Analysis</h1>
-        <p>Esta aplicação serve para fazer uma análise estatística de produtos
-        do Mercado Livre.</p>
+        <div style="margin: 2em 25%; width: 50%; display: flex; flex-direction: column; align-items: center;">
+            <h1>Mercado Analysis</h1>
+            <div>
+                <p>Esta aplicação serve para fazer uma análise estatística de produtos
+                do Mercado Livre.</p>
+            </div>
 
-        <form>
-            <input type="text" />
-            <button id="search-button" type="button">buscar</button>
-        </form>
+            <form>
+                <input type="text" />
+                <button id="search-button" type="button">buscar</button>
+            </form>
+        </div>
         <script src="/static/scripts/search_product.js"></script>
     """
 
