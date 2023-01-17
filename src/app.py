@@ -29,6 +29,7 @@ def main():
             <div>
                 <p>Esta aplicação serve para fazer uma análise estatística de produtos
                 do Mercado Livre.</p>
+                <p>Utilize o campo abaixo para pesquisar preços do produto de sua escolha.</p>
             </div>
 
             <form>
