@@ -32,14 +32,15 @@ def main():
                 <p>Utilize o campo abaixo para pesquisar preços do produto de
                 sua escolha.</p>
             </div>
-
         </header>
+
         <section class="search-field">
             <form>
                 <input type="text" />
                 <button id="search-button" type="button">buscar</button>
             </form>
         </section>
+
         <script src="/static/scripts/search_product.js"></script>
     """
 
