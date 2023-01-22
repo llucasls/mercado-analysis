@@ -89,7 +89,7 @@ def graphics():
     return f"""
         <link rel="stylesheet/less" href="/static/style.less" />
         <main>
-            <h1 align="center">{product_name}</h1>
+            <h1>{product_name}</h1>
             <img src='data:image/png;base64,{hist_data}' />
             <img src='data:image/png;base64,{boxplot_data}' />
         </main>
