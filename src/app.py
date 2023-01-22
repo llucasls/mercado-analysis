@@ -23,7 +23,7 @@ def get_search_term(query_string: str) -> str:
 @app.route("/")
 def main():
     return """
-        <link rel="stylesheet" href="/static/style.css" />
+        <link rel="stylesheet/less" href="/static/style.less" />
         <header>
             <h1>Mercado Analysis</h1>
             <div>
@@ -42,6 +42,7 @@ def main():
         </section>
 
         <script src="/static/scripts/search_product.js"></script>
+        <script src="/static/scripts/less.js"></script>
     """
 
 
@@ -86,10 +87,11 @@ def graphics():
     boxplot_data = base64.b64encode(buf.getbuffer()).decode("ascii")
 
     return f"""
-        <link rel="stylesheet" href="/static/style.css" />
+        <link rel="stylesheet/less" href="/static/style.less" />
         <main>
             <h1 align="center">{product_name}</h1>
             <img src='data:image/png;base64,{hist_data}' />
             <img src='data:image/png;base64,{boxplot_data}' />
         </main>
+        <script src="/static/scripts/less.js"></script>
     """
