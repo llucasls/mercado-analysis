@@ -90,8 +90,8 @@ def graphics():
         <link rel="stylesheet/less" href="/static/style.less" />
         <main>
             <h1>{product_name}</h1>
-            <img src='data:image/png;base64,{hist_data}' />
-            <img src='data:image/png;base64,{boxplot_data}' />
+            <img class="plot" src='data:image/png;base64,{hist_data}' />
+            <img class="plot" src='data:image/png;base64,{boxplot_data}' />
         </main>
         <script src="/static/scripts/less.js"></script>
     """
