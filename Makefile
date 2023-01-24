@@ -1,6 +1,6 @@
 USER_SHELL = /bin/bash
 VENV = .venv
-USER_VIRTUAL_ENVIRONMENT = $(CURDIR)/$(VENV)
+USER_VIRTUAL_ENVIRONMENT = $(PWD)/$(VENV)
 
 PYTHON = python
 PIP = $(PYTHON) -m pip
