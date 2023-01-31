@@ -2,7 +2,7 @@ import json
 import base64
 from io import BytesIO
 
-from requests import request, RequestException, HTTPError
+from requests import request, RequestException, HTTPError, ConnectionError
 from flask import Flask, request as req
 import pandas as pd
 from matplotlib.figure import Figure
@@ -63,7 +63,10 @@ def graphics():
 
     products = []
 
-    product_response = request("get", product_url)
+    try:
+        product_response = request("get", product_url)
+    except ConnectionError:
+        return "Não é possível conectar com o servidor", 500
     product_list = json.loads(product_response.text)
 
     for product in product_list["results"]:
