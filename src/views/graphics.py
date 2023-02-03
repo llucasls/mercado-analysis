@@ -64,10 +64,12 @@ def graphics():
 
     return f"""
         <link rel="stylesheet/less" href="/static/style.less" />
-        <main>
-            <h1>{product_name}</h1>
-            <img class="plot" src='data:image/png;base64,{hist_data}' />
-            <img class="plot" src='data:image/png;base64,{boxplot_data}' />
-        </main>
         <script src="/static/scripts/less.js"></script>
+        <body class="light-mode">
+            <main>
+                <h1>{product_name}</h1>
+                <img class="plot" src='data:image/png;base64,{hist_data}' />
+                <img class="plot" src='data:image/png;base64,{boxplot_data}' />
+            </main>
+        </body>
     """
