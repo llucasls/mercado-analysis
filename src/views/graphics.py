@@ -3,7 +3,7 @@ import base64
 from io import BytesIO
 
 from requests import request, RequestException, HTTPError, ConnectionError
-from flask import request as req
+from flask import request as req, render_template
 import pandas as pd
 from matplotlib.figure import Figure
 
@@ -62,14 +62,8 @@ def graphics():
     boxplot.savefig(buf, format="png")
     boxplot_data = base64.b64encode(buf.getbuffer()).decode("ascii")
 
-    return f"""
-        <link rel="stylesheet/less" href="/static/style.less" />
-        <script src="/static/scripts/less.js"></script>
-        <body class="light-mode">
-            <main>
-                <h1>{product_name}</h1>
-                <img class="plot" src='data:image/png;base64,{hist_data}' />
-                <img class="plot" src='data:image/png;base64,{boxplot_data}' />
-            </main>
-        </body>
-    """
+    return render_template("graphics.xml",
+                           product_name=product_name,
+                           hist_data=hist_data,
+                           boxplot_data=boxplot_data,
+                           mode="light-mode")
