@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <link rel="stylesheet/less" href="/static/style.less" />
+    <script src="/static/scripts/less.js"></script>
+  </head>
+  <body class="{{ mode }}">
+    <main>
+      <h1>{{ product_name }}</h1>
+      <img class="plot" src="data:image/png;base64,{{ hist_data }}" />
+      <img class="plot" src="data:image/png;base64,{{ boxplot_data }}" />
+    </main>
+  </body>
+</html>
