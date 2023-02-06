@@ -2,7 +2,6 @@
   <head>
     <link rel="stylesheet/less" href="/static/style.less" />
     <script src="/static/scripts/less.js"></script>
-    <script src="/static/scripts/redux.js"></script>
   </head>
   <body class="light-mode">
     <header>
@@ -22,6 +21,6 @@
       <button id="toggle-mode" type="button">dark mode</button>
     </section>
     <script src="/static/scripts/search_product.js"></script>
-    <script src="/static/scripts/global_state.js"></script>
+    <script type="module" src="/static/scripts/global_state.js"></script>
   </body>
 </html>

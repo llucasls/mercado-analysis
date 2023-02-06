@@ -1,3 +1,5 @@
+import "./redux.js";
+
 const createStore = window.Redux.legacy_createStore;
 const composeWithDevTools = () =>
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
