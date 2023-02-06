@@ -1,8 +1,10 @@
 import "./redux.js";
 
 const createStore = window.Redux.legacy_createStore;
-const composeWithDevTools = () =>
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+const composeWithDevTools = (...enhancers) => {
+  const devtoolsExtension = window.__REDUX_DEVTOOLS_EXTENSION__;
+  return devtoolsExtension && devtoolsExtension(...enhancers);
+}
 
 const INITIAL_STATE = { mode: "light-mode" };
 
