@@ -1,13 +1,8 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet/less" href="/static/style.less" />
-    <script src="/static/scripts/less.js"></script>
-  </head>
-  <body class="light-mode">
-    <nav>
-      <button type="button">página inicial</button>
-      <button id="toggle-mode" type="button">dark mode</button>
-    </nav>
+{% extends "base.xml" %}
+{% block title %}Página Inicial{% endblock %}
+{% block content %}
     <header>
       <h1>Mercado Analysis</h1>
       <div>
@@ -24,6 +19,5 @@
       </form>
     </section>
     <script src="/static/scripts/search_product.js"></script>
-    <script type="module" src="/static/scripts/global_state.js"></script>
-  </body>
+{% endblock %}
 </html>
