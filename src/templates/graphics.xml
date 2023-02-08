@@ -1,13 +1,12 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet/less" href="/static/style.less" />
-    <script src="/static/scripts/less.js"></script>
-  </head>
-  <body class="light-mode">
+{% extends "base.xml" %}
+{% block title %}Gráficos{% endblock %}
+{% block content %}
     <main>
       <h1>{{ product_name }}</h1>
       <img class="plot" src="data:image/png;base64,{{ hist_data }}" />
       <img class="plot" src="data:image/png;base64,{{ boxplot_data }}" />
     </main>
-  </body>
+{% endblock %}
 </html>
