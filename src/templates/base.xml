@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% block head %}
+    <link rel="stylesheet/less" href="/static/style.less" />
+    <script src="/static/scripts/less.js"></script>
+    <title>{% block title %}{% endblock %} - Mercado Analysis</title>
+    {% endblock %}
+  </head>
+  <body class="light-mode">
+    {% block navbar %}
+    <nav>
+      <button type="button">página inicial</button>
+      <button id="toggle-mode" type="button">dark mode</button>
+    </nav>
+    {% endblock %}
+    <main>{% block content %}{% endblock %}</main>
+    {% block global_state %}
+    <script type="module" src="/static/scripts/global_state.js"></script>
+    {% endblock %}
+  </body>
+</html>
