@@ -2,6 +2,7 @@
 <html>
   <head>
     {% block head %}
+    <meta charset="UTF-8" />
     <link rel="stylesheet/less" href="/static/style.less" />
     <script src="/static/scripts/less.js"></script>
     <title>{% block title %}{% endblock %} - Mercado Analysis</title>
