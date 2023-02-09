@@ -15,7 +15,7 @@ const toggleMode = (mode) => {
     return "light-mode";
   }
 
-  return null;
+  return "light-mode";
 }
 
 const toggleButtonText = (text) => {
