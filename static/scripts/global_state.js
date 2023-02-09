@@ -25,7 +25,7 @@ const toggleButtonText = (text) => {
     return "dark mode";
   }
 
-  return null;
+  return "dark mode";
 }
 
 const reducer = (state = INITIAL_STATE, action) => {
