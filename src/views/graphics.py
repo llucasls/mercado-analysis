@@ -62,7 +62,7 @@ def graphics():
     boxplot.savefig(buf, format="png")
     boxplot_data = base64.b64encode(buf.getbuffer()).decode("ascii")
 
-    return render_template("graphics.xml",
+    return render_template("graphics.jinja",
                            product_name=product_name,
                            hist_data=hist_data,
                            boxplot_data=boxplot_data,
