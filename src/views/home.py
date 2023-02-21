@@ -2,4 +2,4 @@ from flask import render_template
 
 
 def home():
-    return render_template("home.xml")
+    return render_template("home.jinja")
