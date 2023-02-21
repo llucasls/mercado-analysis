@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html>
 {% extends "base.jinja" %}
 {% block title %}Gráficos{% endblock %}
 {% block content %}
-    <main>
-      <h1>{{ product_name }}</h1>
-      <img class="plot" src="data:image/png;base64,{{ hist_data }}" />
-      <img class="plot" src="data:image/png;base64,{{ boxplot_data }}" />
-    </main>
+  <h1>{{ product_name }}</h1>
+  <img class="plot" src="data:image/png;base64,{{ hist_data }}" />
+  <img class="plot" src="data:image/png;base64,{{ boxplot_data }}" />
 {% endblock %}
-</html>
