@@ -2,7 +2,7 @@ USER_SHELL = /bin/bash
 
 VENV = $(CURDIR)/.venv
 
-PYTHON = python
+PYTHON = python3
 PIP = $(PYTHON) -m pip
 
 activate: | $(VENV)
