@@ -6,7 +6,7 @@ const composeWithDevTools = (...enhancers) => {
   return devtoolsExtension && devtoolsExtension(...enhancers);
 }
 
-const INITIAL_STATE = { mode: "light-mode" };
+const INITIAL_STATE = { mode: localStorage.getItem("mode") || "light-mode" };
 
 const toggleMode = (mode) => {
   if (mode === "light-mode") {
@@ -30,7 +30,10 @@ const toggleButtonText = (text) => {
 
 const reducer = (state = INITIAL_STATE, action) => {
   if (action.type === "CHANGE_MODE") {
-    return { ...state, mode: toggleMode(state.mode) };
+    const newMode = toggleMode(state.mode);
+    localStorage.setItem("mode", newMode);
+
+    return { ...state, mode: newMode };
   }
 
   return state;
@@ -53,3 +56,10 @@ store.subscribe(() => {
   toggleModeButton.innerHTML = toggleButtonText(toggleModeButton.innerHTML);
   body.className = toggleMode(body.className);
 });
+
+window.onload = () => {
+  const initialMode = localStorage.getItem("mode") || "light-mode";
+  const initialButtonText = initialMode.replace("-", " ");
+  document.body.className = initialMode;
+  toggleModeButton.innerHTML = initialButtonText;
+};
