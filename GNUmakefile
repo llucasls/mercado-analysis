@@ -23,3 +23,5 @@ dev: | $(VENV)
 	$(VENV)/bin/flask --debug --app src.app run
 
 .PHONY: install activate dev
+
+.SILENT: activate $(VENV) dev
