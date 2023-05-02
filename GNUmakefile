@@ -1,25 +1,25 @@
 USER_SHELL = /bin/bash
-VENV = .venv
-USER_VIRTUAL_ENVIRONMENT = $(CURDIR)/$(VENV)
+
+VENV = $(CURDIR)/.venv
 
 PYTHON = python
 PIP = $(PYTHON) -m pip
 
-activate: | $(USER_VIRTUAL_ENVIRONMENT)
+activate: | $(VENV)
 	if test -z "$${VIRTUAL_ENV}"; then \
-		. $(USER_VIRTUAL_ENVIRONMENT)/bin/activate && $(USER_SHELL); \
+		. $(VENV)/bin/activate && $(USER_SHELL); \
 	fi
 
-install: $(USER_VIRTUAL_ENVIRONMENT)
+install: $(VENV)
 
-$(USER_VIRTUAL_ENVIRONMENT): requirements.txt
-	if test ! -d $(USER_VIRTUAL_ENVIRONMENT); then \
-		$(PYTHON) -m venv $(USER_VIRTUAL_ENVIRONMENT); \
+$(VENV): requirements.txt
+	if test ! -d $(VENV); then \
+		$(PYTHON) -m venv $(VENV); \
 	fi
-	. $(USER_VIRTUAL_ENVIRONMENT)/bin/activate && $(PIP) install -r requirements.txt
-	touch $(USER_VIRTUAL_ENVIRONMENT)
+	. $(VENV)/bin/activate && $(PIP) install -r requirements.txt
+	touch $(VENV)
 
-dev: | $(USER_VIRTUAL_ENVIRONMENT)
-	$(USER_VIRTUAL_ENVIRONMENT)/bin/flask --debug --app src.app run
+dev: | $(VENV)
+	$(VENV)/bin/flask --debug --app src.app run
 
 .PHONY: install activate dev
