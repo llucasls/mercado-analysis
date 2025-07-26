@@ -1,4 +1,4 @@
-import "./redux.js";
+import "redux";
 
 const createStore = window.Redux.legacy_createStore;
 const composeWithDevTools = (...enhancers) => {

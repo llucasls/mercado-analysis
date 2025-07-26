@@ -4,6 +4,13 @@
     {% block head %}
     <meta charset="UTF-8" />
     <link rel="stylesheet/less" href="/static/style.less" />
+    <script type="importmap">
+      {
+        "imports": {
+          "redux": "/static/scripts/redux.js"
+        }
+      }
+    </script>
     <script src="/static/scripts/less.js"></script>
     <title>{% block title %}{% endblock %} - Mercado Analysis</title>
     {% endblock %}
